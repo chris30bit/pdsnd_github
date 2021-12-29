@@ -8,11 +8,9 @@ Udacity's python project to analyse data of a bike sharing company
 This python script allows to do some analysis of bike sharing user data
 
 ### Files used
-bikeshare_2.py
+python sript: bikeshare_2.py
 
-chicago.csv
-new_york.csv
-washington.csv
+Data files: chicago.csv, new_york.csv, washington.csv
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
