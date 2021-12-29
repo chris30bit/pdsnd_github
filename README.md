@@ -2,17 +2,20 @@
 2021-12-29
 
 ### Project Title
-Udacity's python project to analyse data of a bike sharing company
+Udacity's Python Project on Bike Share Data
 
 ### Description
-This python script allows to do some analysis of bike sharing user data
+This python script allows to do some analysis of bike sharing user data.
 
 ### Files used
-python sript: bikeshare_2.py
+Python script: bikeshare_2.py
 
-Data files: chicago.csv, new_york.csv, washington.csv
+Data files: chicago.csv, new_york_city.csv, washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+This script was developed by using VS Code.
+Helpful links for Python:
+https://docs.python.org/3/tutorial/
+https://pandas.pydata.org/docs/user_guide/index.html
 
 
