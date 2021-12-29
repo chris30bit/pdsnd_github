@@ -5,8 +5,8 @@
 Udacity's Python Project on Bike Share Data
 
 ### Description
-This python script allows to do some analysis of bike sharing user data.
-It provides some interesting statistcs, and you can interactively filter the data by:
+This python script allows you to do some analysis of bike sharing user data.
+It provides some interesting statistcs and you can interactively filter the data by:
 
 1) city (Washington, New York City, and Chicago)
 2) month
