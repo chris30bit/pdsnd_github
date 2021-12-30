@@ -21,7 +21,6 @@ def get_filters():
     print('Hello! Let\'s explore some US bikeshare data!')
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
-        #city = 'chicago'
         city = input(
             'Please type in one these cities? Chicago, New York City or Washington: ').lower()
         if city in CITY_DATA:
@@ -29,19 +28,17 @@ def get_filters():
 
     # get user input for month (all, january, february, ... , june)
     while True:
-        #month = 'all'
         month_dict = {'january': '01', 'february': '02', 'march': '03', 'april': '04', 'may': '05', 'june': '06',
                       'july': '07', 'august': '08', 'september': '09', 'october': '10', 'november': '11', 'december': '12', 'all': 'all'}
         month = input(
             'If you want to filter by month, type in any month,  otherwise type \"all\" : ').lower()
-        print(month)      
+        print(month)
         if month in month_dict:
-            month = month_dict[month]  
+            month = month_dict[month]
             break
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
-        #day = 'all'
         day = input(
             'Please select the day you want to explore. ("all"or monday, tuesday, ... sunday)": ').lower()
         if (day == 'all') or (day == 'monday') or (day == 'tuesday') or (day == 'wednesday') or (day == 'thursday') or (day == 'friday') or (day == 'saturday') or (day == 'sunday'):
@@ -72,7 +69,7 @@ def load_data(city, month, day):
     """
     # print(CITY_DATA[city])
 
-    df = pd.read_csv(CITY_DATA[city], sep=',')#.head(60)
+    df = pd.read_csv(CITY_DATA[city], sep=',')  # .head(60)
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['Trip Duration'] = pd.to_numeric(df['Trip Duration'])
     df['week_day'] = df['Start Time'].dt.weekday
@@ -220,6 +217,7 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
+
 def display_raw_data(df):
     """Displays 5 lines of raw data, if wanted.
 
@@ -231,7 +229,8 @@ def display_raw_data(df):
     df = df.drop('hour', 1)
     df = df.drop('month', 1)
     df = df.drop('Connections', 1)
-    view_data = input("Would you like to view 5 rows of individual trip data? Enter yes or no! ").lower()
+    view_data = input(
+        "Would you like to view 5 rows of individual trip data? Enter yes or no! ").lower()
     start_loc = 0
     size = df['Start Time'].count()
     while (view_data == 'yes'):
