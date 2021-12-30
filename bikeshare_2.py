@@ -32,7 +32,6 @@ def get_filters():
                       'july': '07', 'august': '08', 'september': '09', 'october': '10', 'november': '11', 'december': '12', 'all': 'all'}
         month = input(
             'If you want to filter by month, type in any month,  otherwise type \"all\" : ').lower()
-        print(month)
         if month in month_dict:
             month = month_dict[month]
             break
@@ -67,9 +66,8 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-    # print(CITY_DATA[city])
 
-    df = pd.read_csv(CITY_DATA[city], sep=',')  # .head(60)
+    df = pd.read_csv(CITY_DATA[city], sep=',')
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['Trip Duration'] = pd.to_numeric(df['Trip Duration'])
     df['week_day'] = df['Start Time'].dt.weekday
@@ -81,7 +79,7 @@ def load_data(city, month, day):
     if(day != 'all'):
         df = df[(df['Start Time'].dt.weekday ==
                  time.strptime(day, '%A').tm_wday)]
-    # print(df)
+
 
     return df
 
@@ -151,7 +149,6 @@ def station_stats(df):
     # display most frequent combination of start station and end station trip
     mc_conn = df.groupby('Connections').count()
     max_conn = mc_conn.max().max()
-    # print(max_conn)
     mc_conn = mc_conn[(mc_conn == max_conn).any(axis=1)].index[0]
     print("\n\tThe most common connection was " + mc_conn+".")
     print("\nThis took %s seconds." % (time.time() - start_time))
